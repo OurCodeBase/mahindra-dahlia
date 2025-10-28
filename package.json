@@ -12,6 +12,7 @@
     "@crxjs/vite-plugin": "^2.2.1",
     "@types/chrome": "^0.1.24",
     "typescript": "~5.9.3",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "vite-plugin-zip-pack": "^1.2.4"
   }
 }

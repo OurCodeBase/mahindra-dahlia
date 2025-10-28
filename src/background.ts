@@ -33,6 +33,7 @@ function callback() {
     if (value) {
       element.value = value;
       element.dispatchEvent(new Event('change', { bubbles: true }));
+      element.dispatchEvent(new Event('input', { bubbles: true }));
     } else {
       element.click();
     }
