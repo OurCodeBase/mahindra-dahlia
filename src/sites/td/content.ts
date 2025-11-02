@@ -9,6 +9,5 @@ s.onload = function (this, ev) {
 
 // response receiver.
 window.addEventListener('message', function (e) {
-  console.log('sniffed packets:' , e.data.type, e.data.data);
   chrome.runtime.sendMessage(e.data.data);
 });
