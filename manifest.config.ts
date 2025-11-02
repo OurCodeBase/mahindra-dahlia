@@ -3,8 +3,8 @@ import { defineManifest } from "@crxjs/vite-plugin";
 export default defineManifest({
   manifest_version: 3,
   name: "mahindra-dahlia",
-  description: "A chromium extension to handle initial follow up by itself.",
-  version: "1.1",
+  description: "A chromium extension for mahindra cerebo automation.",
+  version: "1.2",
   icons: {
     16: "icon.png",
     32: "icon.png",
@@ -18,12 +18,32 @@ export default defineManifest({
     service_worker: "src/background.ts",
     type: "module",
   },
+  content_scripts: [
+    {
+      matches: ["https://cerebro-tdportal.mahindra.com/*"],
+      js: ["src/sites/td/content.ts"],
+      run_at: "document_start",
+      all_frames: true
+    }
+  ],
   permissions: [
+    "tabs",
     "scripting",
     "activeTab"
   ],
   host_permissions: [
     "*://localhost:*/*",
+    "https://web.whatsapp.com/*",
+    "https://cerebro-tdportal.mahindra.com/*",
     "*://mahindra.my.site.com/*"
-  ]
+  ],
+  web_accessible_resources: [
+    {
+      resources: ["transformer.js"],
+      matches: ["https://cerebro-tdportal.mahindra.com/*"]
+    }
+  ],
+  externally_connectable: {
+    matches: ["https://cerebro-tdportal.mahindra.com/*"]
+  }
 });
