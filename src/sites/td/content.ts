@@ -11,3 +11,9 @@ s.onload = function (this, ev) {
 window.addEventListener('message', function (e) {
   chrome.runtime.sendMessage(e.data.data);
 });
+
+// alert receiver.
+chrome.runtime.onMessage.addListener(function(message) {
+  if (message["type"] == "alert") return alert(message.data);
+  return true;
+})
