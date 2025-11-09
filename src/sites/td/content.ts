@@ -7,12 +7,11 @@ s.onload = function (this, ev) {
 };
 (document.head || document.documentElement).appendChild(s);
 
-// response receiver.
 window.addEventListener('message', function (e) {
+  if (!e.data.data) return;
   chrome.runtime.sendMessage(e.data.data);
 });
 
-// alert receiver.
 chrome.runtime.onMessage.addListener(function(message) {
   if (message["type"] == "alert") return alert(message.data);
   return true;
