@@ -2,7 +2,6 @@ import { followUp, fallbackHandler, dispatchMessage } from './features'
 
 chrome.action.onClicked.addListener(async (tab) => {
   if (!tab.id) return;
-  if (!tab.url?.includes("mahindra.my.site.com")) return;
   await chrome.scripting.executeScript({
     target: { tabId: tab.id },
     func: followUp,
