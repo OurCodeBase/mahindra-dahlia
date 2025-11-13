@@ -34,6 +34,7 @@ export default defineManifest({
   host_permissions: [
     "*://localhost:*/*",
     "https://web.whatsapp.com/*",
+    "https://mahindr.static.domains/*",
     "https://cerebro-tdportal.mahindra.com/*",
     "*://mahindra.my.site.com/*"
   ],

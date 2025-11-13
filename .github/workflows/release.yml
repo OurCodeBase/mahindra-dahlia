@@ -16,6 +16,8 @@ jobs:
         with:
           node-version: 'latest'
       - name: Install dependencies and build release.
+        env:
+          VITE_LICENSE_KEY: ${{ secrets.LICENSE_KEY }}
         run: |
           npm install
           npm run build
