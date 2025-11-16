@@ -4,7 +4,7 @@ export default defineManifest({
   manifest_version: 3,
   name: "mahindra-dahlia",
   description: "A chromium extension for mahindra cerebo automation.",
-  version: "1.7",
+  version: "1.8",
   icons: {
     16: "icon.png",
     32: "icon.png",
@@ -35,7 +35,7 @@ export default defineManifest({
   host_permissions: [
     "*://localhost:*/*",
     "https://web.whatsapp.com/*",
-    "https://mahindr.static.domains/*",
+    "*://mahindr.appwrite.network/*",
     "https://cerebro-tdportal.mahindra.com/*",
     "*://mahindra.my.site.com/*"
   ],
