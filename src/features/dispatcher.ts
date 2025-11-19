@@ -11,7 +11,7 @@ export default function app(change: any) {
   document.execCommand('insertText', false, createMessage());
   textbox?.dispatchEvent(new Event('change', { bubbles: true }));
   setTimeout(() => {
-    const send = main?.querySelector<HTMLButtonElement>('[aria-label="Send"]');
+    const send = main?.querySelector<HTMLButtonElement>('[data-icon="wds-ic-send-filled"]');
     send?.click();
   }, 300);
 }

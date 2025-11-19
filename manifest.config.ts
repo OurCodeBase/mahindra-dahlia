@@ -4,7 +4,7 @@ export default defineManifest({
   manifest_version: 3,
   name: "mahindra-dahlia",
   description: "A chromium extension for mahindra cerebo automation.",
-  version: "1.8",
+  version: "1.9",
   icons: {
     16: "icon.png",
     32: "icon.png",
